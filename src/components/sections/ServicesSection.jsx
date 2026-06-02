@@ -65,86 +65,86 @@ const services = [
 ];
 
 export default function ServicesSection() {
-    const [active, setActive] = useState(0);
+    const [active, setActive] = useState(null);
+
+    const toggleService = (index) => {
+        setActive(active === index ? null : index);
+    };
 
     return (
         <section
             id="services"
-            className="py-32 border-t border-zinc-900"
+            className="py-20 md:py-32 border-t border-zinc-900"
         >
             <Container>
 
                 {/* Header */}
-                <div className="max-w-3xl mb-20">
-                    <span className="text-lime-400 uppercase tracking-[0.2em] text-sm">
+                <div className="max-w-3xl mb-12 md:mb-20">
+                    <span className="text-lime-400 uppercase tracking-[0.2em] text-xs md:text-sm">
                         Services
                     </span>
 
-                    <h2 className="text-5xl font-bold mt-6">
+                    <h2 className="text-3xl md:text-5xl font-bold mt-4 md:mt-6">
                         Design systems, not just websites.
                     </h2>
                 </div>
 
-                {/* Layout */}
-                <div className="grid lg:grid-cols-2 gap-16">
+                {/* LIST */}
+                <div className="space-y-4">
 
-                    {/* LEFT SIDE — Services List */}
-                    <div>
-                        {services.map((service, index) => (
-                            <button
+                    {services.map((service, index) => {
+                        const isOpen = active === index;
+
+                        return (
+                            <div
                                 key={service.title}
-                                onClick={() => setActive(index)}
-                                className={`w-full flex justify-between items-center border-b py-8 transition-all duration-300 group
-                                    ${active === index
-                                    ? "border-lime-400 text-lime-400"
-                                    : "border-zinc-900 text-zinc-400 hover:text-white"
-                                }`}
+                                className="border-b border-zinc-900"
                             >
-                                <div className="flex gap-6 items-center">
-                                    <span className="text-zinc-500 text-sm">
-                                        0{index + 1}
+
+                                {/* Header Row */}
+                                <button
+                                    onClick={() => toggleService(index)}
+                                    className="w-full flex justify-between items-center py-6 md:py-8 text-left"
+                                >
+                                    <div className="flex gap-4 md:gap-6 items-center">
+                                        <span className="text-zinc-500 text-xs md:text-sm">
+                                            0{index + 1}
+                                        </span>
+
+                                        <h3 className="text-lg md:text-2xl text-zinc-300">
+                                            {service.title}
+                                        </h3>
+                                    </div>
+
+                                    <span
+                                        className={`text-xl transition-transform duration-300 ${
+                                            isOpen ? "rotate-90 text-lime-400" : ""
+                                        }`}
+                                    >
+                                        →
                                     </span>
+                                </button>
 
-                                    <h3 className="text-2xl">
-                                        {service.title}
-                                    </h3>
-                                </div>
+                                {/* DROPDOWN */}
+                                {isOpen && (
+                                    <div className="pb-6 md:pb-8 pl-6 md:pl-10 space-y-4">
+                                        {service.process.map((step, i) => (
+                                            <div key={i} className="flex gap-4 items-start">
+                                                <span className="text-lime-400 text-xs md:text-sm">
+                                                    {String(i + 1).padStart(2, "0")}
+                                                </span>
 
-                                <span className="text-xl group-hover:translate-x-1 transition-transform">
-                                    →
-                                </span>
-                            </button>
-                        ))}
-                    </div>
+                                                <p className="text-zinc-400 text-sm md:text-base">
+                                                    {step}
+                                                </p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
 
-                    {/* RIGHT SIDE — Process Viewer */}
-                    <div className="border border-zinc-900 rounded-2xl p-10 bg-zinc-950">
-
-                        <div className="mb-8">
-                            <span className="text-lime-400 text-sm uppercase tracking-[0.2em]">
-                                Process
-                            </span>
-
-                            <h3 className="text-2xl font-semibold mt-4">
-                                {services[active].title}
-                            </h3>
-                        </div>
-
-                        <div className="space-y-6">
-                            {services[active].process.map((step, i) => (
-                                <div key={i} className="flex gap-4 items-start">
-                                    <span className="text-lime-400 text-sm">
-                                        {String(i + 1).padStart(2, "0")}
-                                    </span>
-
-                                    <p className="text-zinc-300">
-                                        {step}
-                                    </p>
-                                </div>
-                            ))}
-                        </div>
-
-                    </div>
+                            </div>
+                        );
+                    })}
 
                 </div>
 
