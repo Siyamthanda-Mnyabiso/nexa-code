@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export default function HeroLeft() {
+    const navigate = useNavigate();
+
     return (
         <div className="z-10 max-w-xl">
             <motion.p
@@ -25,12 +28,41 @@ export default function HeroLeft() {
             </p>
 
             <div className="flex gap-4 mt-8">
-                <button className="bg-lime-400 text-black px-6 py-3">
-                    Start Project
+
+                {/* CTA 1 */}
+                <button
+                    onClick={() => navigate("/contact")}
+                    className="mt-10 px-8 py-4 bg-lime-400 text-black rounded-full"
+                >
+                    Start Your Project
                 </button>
-                <button className="border border-zinc-700 px-6 py-3">
+
+                {/* CTA 2 — FLOATING ANIMATED */}
+                <motion.button
+                    onClick={() => {
+                        document.getElementById("work")?.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                        });
+                    }}
+                    animate={{
+                        x: [0, 20, -15, 10, 0],
+                        y: [0, -15, 10, -20, 0],
+                        rotate: [0, 2, -2, 1, 0],
+                    }}
+                    transition={{
+                        duration: 8,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                    }}
+                    whileHover={{
+                        scale: 1.08,
+                    }}
+                    className="border border-zinc-700 px-6 py-3 rounded-full"
+                >
                     View Work
-                </button>
+                </motion.button>
+
             </div>
         </div>
     );

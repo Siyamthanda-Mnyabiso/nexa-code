@@ -1,6 +1,9 @@
 import Container from "../layout/Container";
+import { useNavigate } from "react-router-dom";
 
 export default function CTASection() {
+    const navigate = useNavigate();
+
     return (
         <section className="py-40 relative overflow-hidden">
 
@@ -10,9 +13,9 @@ export default function CTASection() {
 
                 <div className="text-center max-w-4xl mx-auto">
 
-          <span className="text-lime-400 uppercase tracking-[0.2em] text-sm">
-            Start a Project
-          </span>
+                    <span className="text-lime-400 uppercase tracking-[0.2em] text-sm">
+                        Start a Project
+                    </span>
 
                     <h2 className="text-6xl lg:text-8xl font-bold mt-8 leading-none">
                         Ready to build something remarkable?
@@ -23,7 +26,11 @@ export default function CTASection() {
                         digital experience designed for growth.
                     </p>
 
-                    <button className="mt-12 px-8 py-4 rounded-full bg-lime-400 text-black font-semibold hover:scale-105 transition">
+                    {/* FIX ONLY HERE */}
+                    <button
+                        onClick={() => navigate("/contact")}
+                        className="mt-12 px-8 py-4 rounded-full bg-lime-400 text-black font-semibold hover:scale-105 transition"
+                    >
                         Start Your Project
                     </button>
 

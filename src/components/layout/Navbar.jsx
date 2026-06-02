@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Container from "./Container";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
+    const navigate = useNavigate();
 
     return (
         <motion.header
@@ -24,39 +26,23 @@ export default function Navbar() {
                         </span>
                     </div>
 
-                    {/* Navigation (Desktop) */}
+                    {/* Desktop Nav */}
                     <ul className="hidden lg:flex items-center gap-8 text-sm text-zinc-400">
-                        <li>
-                            <a href="#work" className="hover:text-white transition-colors">
-                                Work
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#services" className="hover:text-white transition-colors">
-                                Services
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#process" className="hover:text-white transition-colors">
-                                Process
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#about" className="hover:text-white transition-colors">
-                                About
-                            </a>
-                        </li>
+                        <li><a href="#work">Work</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#process">Process</a></li>
+                        <li><a href="#about">About</a></li>
                     </ul>
 
-                    {/* CTA (Desktop) */}
-                    <button className="hidden lg:block px-5 py-2 rounded-full bg-lime-400 text-black font-medium hover:scale-105 transition-transform">
+                    {/* CTA Desktop */}
+                    <button
+                        onClick={() => navigate("/contact")}
+                        className="px-5 py-2 rounded-full bg-lime-400 text-black font-medium hover:scale-105 transition-transform"
+                    >
                         Let's Talk
                     </button>
 
-                    {/* Mobile Menu Button */}
+                    {/* Mobile Toggle */}
                     <button
                         className="lg:hidden text-white text-xl"
                         onClick={() => setOpen(!open)}
@@ -64,16 +50,20 @@ export default function Navbar() {
                         ☰
                     </button>
 
-                    {/* Mobile Dropdown */}
+                    {/* Mobile Menu */}
                     {open && (
                         <div className="absolute top-20 left-0 w-full rounded-2xl border border-white/10 bg-black/90 backdrop-blur-xl p-6 flex flex-col gap-4 lg:hidden">
 
-                            <a href="#work" className="text-zinc-300">Work</a>
-                            <a href="#services" className="text-zinc-300">Services</a>
-                            <a href="#process" className="text-zinc-300">Process</a>
-                            <a href="#about" className="text-zinc-300">About</a>
+                            <a href="#work">Work</a>
+                            <a href="#services">Services</a>
+                            <a href="#process">Process</a>
+                            <a href="#about">About</a>
 
-                            <button className="mt-4 px-5 py-2 rounded-full bg-lime-400 text-black font-medium">
+                            {/* FIX ONLY HERE */}
+                            <button
+                                onClick={() => navigate("/contact")}
+                                className="mt-4 px-5 py-2 rounded-full bg-lime-400 text-black font-medium"
+                            >
                                 Let's Talk
                             </button>
 
