@@ -7,6 +7,14 @@ export default function Navbar() {
     const [open, setOpen] = useState(false);
     const navigate = useNavigate();
 
+    // NEW: scroll to top function
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    };
+
     return (
         <motion.header
             initial={{ y: -40, opacity: 0 }}
@@ -18,8 +26,11 @@ export default function Navbar() {
 
                 <nav className="relative flex items-center justify-between h-16 px-6 rounded-full border border-white/10 bg-black/40 backdrop-blur-xl">
 
-                    {/* Logo */}
-                    <div className="flex items-center gap-3">
+                    {/* Logo (CLICKABLE - NO UI CHANGE) */}
+                    <div
+                        onClick={scrollToTop}
+                        className="flex items-center gap-3 cursor-pointer"
+                    >
                         <div className="w-8 h-8 rounded-full bg-lime-400" />
                         <span className="font-semibold tracking-wide">
                             NEXA CODE
@@ -59,7 +70,6 @@ export default function Navbar() {
                             <a href="#process">Process</a>
                             <a href="#about">About</a>
 
-                            {/* FIX ONLY HERE */}
                             <button
                                 onClick={() => navigate("/contact")}
                                 className="mt-4 px-5 py-2 rounded-full bg-lime-400 text-black font-medium"
