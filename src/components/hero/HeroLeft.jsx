@@ -1,8 +1,12 @@
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
 
 export default function HeroLeft() {
-    const navigate = useNavigate();
+    const scrollToContact = () => {
+        document.getElementById("contact")?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+        });
+    };
 
     return (
         <div className="z-10 max-w-xl">
@@ -29,15 +33,13 @@ export default function HeroLeft() {
 
             <div className="flex gap-4 mt-8">
 
-                {/* CTA 1 */}
                 <button
-                    onClick={() => navigate("/contact")}
+                    onClick={scrollToContact}
                     className="mt-10 px-8 py-4 bg-lime-400 text-black rounded-full"
                 >
                     Start Your Project
                 </button>
 
-                {/* CTA 2 — FLOATING ANIMATED */}
                 <motion.button
                     onClick={() => {
                         document.getElementById("work")?.scrollIntoView({

@@ -1,8 +1,13 @@
 import Container from "../layout/Container";
-import { useNavigate } from "react-router-dom";
 
 export default function CTASection() {
-    const navigate = useNavigate();
+
+    const scrollToContact = () => {
+        document.getElementById("contact")?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+        });
+    };
 
     return (
         <section className="py-40 relative overflow-hidden">
@@ -26,13 +31,6 @@ export default function CTASection() {
                         digital experience designed for growth.
                     </p>
 
-                    {/* FIX ONLY HERE */}
-                    <button
-                        onClick={() => navigate("/contact")}
-                        className="mt-12 px-8 py-4 rounded-full bg-lime-400 text-black font-semibold hover:scale-105 transition"
-                    >
-                        Start Your Project
-                    </button>
 
                 </div>
 

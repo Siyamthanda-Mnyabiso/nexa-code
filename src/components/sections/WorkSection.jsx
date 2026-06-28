@@ -5,7 +5,7 @@ const projects = [
         title: "TopDeck",
         description:
             "A beauty service booking platform designed to help clients discover, book, and manage appointments with ease.",
-        url: "https://top-deck.vercel.app/",
+        url: "https://topdek.co.za/",
         tags: ["UI/UX", "Development", "Strategy"],
     },
     {
@@ -16,18 +16,11 @@ const projects = [
         tags: ["Full Stack", "UI/UX", "Development"],
     },
     {
-        title: "Rivo",
+        title: "Just BLK",
         description:
             "A modern full-stack platform designed with scalability, clean architecture, and intuitive user flows.",
         url: "https://rivo-full-stack.vercel.app/",
         tags: ["Full Stack", "Web Design", "Development"],
-    },
-    {
-        title: "Continental Takeaways",
-        description:
-            "A food ordering experience built to help customers browse menus and place orders effortlessly.",
-        url: "https://continental-takeaways.vercel.app/",
-        tags: ["Restaurant", "Development", "UI/UX"],
     },
     {
         title: "Izzy Burger",
@@ -36,6 +29,41 @@ const projects = [
         url: "https://izzy-burger.vercel.app/",
         tags: ["Restaurant", "Web Design", "Development"],
     },
+    {
+        title: "Vril Couture",
+        description:
+            "A modern streetwear fashion website showcasing collections, new arrivals, and urban-inspired clothing with a clean e-commerce experience.",
+        url: "https://vrilcouture.co.za/",
+        tags: ["Fashion", "E-commerce", "Web Design"]
+    },
+    {
+        title: "Cotton Closet",
+        description:
+            "A stylish clothing brand website focused on showcasing fashion collections, product variants, and an elegant shopping experience.",
+        url: "https://cotton-closet.vercel.app/",
+        tags: ["Fashion", "E-commerce", "Branding"]
+    },
+    {
+        title: "Dentist Website",
+        description:
+            "A professional dental clinic website designed to present services, build trust, and help patients book appointments easily.",
+        url: "https://dentist-website-taupe.vercel.app/",
+        tags: ["Healthcare", "Web Design", "Appointment System"]
+    },
+    {
+        title: "Kota Vibe",
+        description:
+            "A food and restaurant-themed website designed to showcase menu items, drive engagement, and promote local food culture.",
+        url: "https://kota-vibe.vercel.app/",
+        tags: ["Restaurant", "Food", "Web Design"]
+    },
+    {
+        title: "Nolz Three",
+        description:
+            "A creative portfolio-style website built to showcase projects, design work, and digital experiences in a minimal layout.",
+        url: "https://nolz-three.vercel.app/",
+        tags: ["Portfolio", "Creative", "Web Design"]
+    }
 ];
 
 export default function WorkSection() {
