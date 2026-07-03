@@ -33,7 +33,7 @@ const projects = [
         title: "Vril Couture",
         description:
             "A modern streetwear fashion website showcasing collections, new arrivals, and urban-inspired clothing with a clean e-commerce experience.",
-        url: "https://vrilcouture.vercel.app/",
+        url: "https://www.vrilcouture.co.za/",
         tags: ["Fashion", "E-commerce", "Web Design"]
     },
     {
