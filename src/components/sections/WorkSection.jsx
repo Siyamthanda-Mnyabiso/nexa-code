@@ -19,7 +19,7 @@ const projects = [
         title: "Just BLK",
         description:
             "A modern full-stack platform designed with scalability, clean architecture, and intuitive user flows.",
-        url: "https://rivo-full-stack.vercel.app/",
+        url: "https://www.justblk.co.za/",
         tags: ["Full Stack", "Web Design", "Development"],
     },
     {
