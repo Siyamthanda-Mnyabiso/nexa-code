@@ -63,6 +63,20 @@ const projects = [
             "A creative portfolio-style website built to showcase projects, design work, and digital experiences in a minimal layout.",
         url: "https://nolz-three.vercel.app/",
         tags: ["Portfolio", "Creative", "Web Design"]
+    },
+    {
+        title: "Because We Said So",
+        description:
+            "A podcast website built to showcase episodes, grow community engagement, and give listeners a home to follow the show across platforms.",
+        url: "https://bwss-dun.vercel.app/",
+        tags: ["Podcast", "Media", "Web Design"]
+    },
+    {
+        title: "Eleve Studios",
+        description:
+            "A modern fashion brand website showcasing collections and products with a clean e-commerce experience.",
+        url: "https://eleve-studios.vercel.app/",
+        tags: ["Fashion", "E-commerce", "Web Design"]
     }
 ];
 
