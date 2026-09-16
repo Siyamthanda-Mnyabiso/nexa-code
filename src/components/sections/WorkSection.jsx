@@ -77,6 +77,41 @@ const projects = [
             "A modern fashion brand website showcasing collections and products with a clean e-commerce experience.",
         url: "https://eleve-studios.vercel.app/",
         tags: ["Fashion", "E-commerce", "Web Design"]
+    },
+    {
+        title: "Liya M",
+        description:
+            "The official artist website for DJ Liya M, built to showcase her sound, upcoming shows, and connect with fans.",
+        url: "https://liya-m.vercel.app/",
+        tags: ["Music", "Artist Website", "Web Design"]
+    },
+    {
+        title: "Roji Wear",
+        description:
+            "A streetwear label site built in the back alleys — unisex hoodies, tees, and outerwear presented through a clean e-commerce experience.",
+        url: "https://roji-wear.vercel.app/",
+        tags: ["Fashion", "E-commerce", "Web Design"]
+    },
+    {
+        title: "Giant Hyper",
+        description:
+            "A South African hypermarket platform for retail and wholesale, covering everyday groceries, bulk pricing, and business accounts.",
+        url: "https://giant-hyper-digital.vercel.app/",
+        tags: ["E-commerce", "Retail", "Full Stack"]
+    },
+    {
+        title: "PC Revival",
+        description:
+            "A device marketplace built for browsing devices, trade-ins, and order tracking with a clean, modern storefront experience.",
+        url: "https://pc-revival.vercel.app/",
+        tags: ["E-commerce", "Tech", "Web Design"]
+    },
+    {
+        title: "A1 Productions",
+        description:
+            "A production company website built to showcase services and work, and help clients connect with the team with ease.",
+        url: "https://a1production-two.vercel.app/",
+        tags: ["Media", "Web Design", "Branding"]
     }
 ];
 

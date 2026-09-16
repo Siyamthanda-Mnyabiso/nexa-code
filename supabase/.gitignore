@@ -1,0 +1,12 @@
+# Supabase
+.branches
+.temp
+
+# Deno (local type-checking only; Edge Functions bundle from source at deploy time)
+functions/node_modules
+functions/deno.lock
+
+# dotenvx
+.env.keys
+.env.local
+.env.*.local
